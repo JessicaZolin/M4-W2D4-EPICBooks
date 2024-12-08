@@ -11,10 +11,22 @@
 </head>
 
 <body>
-    <header class="d-flex justify-content-between border-bottom">
+    <nav class="d-flex justify-content-between border-bottom">
 
-        <!-- FOTO E TITOLO -->
-        <div class="d-flex align-items-center gap-3 p-2">
+        <!-- NAVBAR visibile solo a schermo piccolo -->
+        <div class="col-12 d-md-none">
+            <div class="d-flex align-items-center justify-content-center gap-3 p-2">
+                <img src="https://image.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg"
+                    alt="Libri" id="logo" class="rounded">
+                <div id="nome-logo">
+                    <h1 class="m-0">EPICBook</h1>
+                    <h5>Find your book!</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVBAR visibile a oartire da schermi medi: FOTO E TITOLO -->
+        <div class="d-none d-md-flex align-items-center justify-content-center gap-3 p-2 ps-4">
             <img src="https://image.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg"
                 alt="Libri" id="logo" class="rounded">
             <div id="nome-logo">
@@ -23,25 +35,22 @@
             </div>
         </div>
 
-
-
-
-
         <!-- BARRA DI RICERCA -->
 
         <!-- visibile solo a partire la schermi di medie dimensioni -->
-        <div class="d-flex align-items-center p-2 d-none d-lg-flex justify-content-center">
+        <!-- <div class="d-flex align-items-center p-2 d-none d-md   -flex justify-content-center">
             <input type="text" placeholder="Find your book" class="form-control h-50 w-75">
             <input type="button" value="Search" class="btn btn-outline-dark h-50">
-        </div>
+        </div> -->
 
 
 
 
         <!--  ACCEDI e CARRELLO -->
-        <div class="d-flex align-items-center gap-lg-4 p-2 pe-lg-4">
+        <div class="d-none d-md-flex align-items-center gap-2 gap-lg-4 px-2 pe-4">
+
             <!--  BARRA DI RICERCA: visibile solo su schermo piccolo e medio -->
-            <div class="d-flex align-items-center gap-2 p-2 d-lg-none">
+            <!--  <div class="d-flex align-items-center gap-2 p-2 d-lg-none">
                 <button type="button" class="btn d-flex flex-column align-items-center gap-2" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -50,9 +59,10 @@
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                     </svg>
                     <p class="m-0 d-none d-md-flex">Cerca</p>
-                </button>
-                <!-- modale che appare al click della lente di ricerca -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                </button> -->
+
+            <!-- modale che appare al click della lente di ricerca -->
+            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -71,53 +81,171 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+            <!-- simbolo ACCOUNT: con dropdown -->
             <div class="d-flex align-items-center gap-2 d-none d-md-flex">
-                <button class="btn d-flex flex-column align-items-center gap-2">
+                <button class="btn d-flex align-items-center gap-2 dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                         class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                         <path fill-rule="evenodd"
                             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                     </svg>
-                    <p class="m-0 d-none d-md-flex">Accedi</p>
                 </button>
+                <!-- Dropdown menù links -->
+                <ul class="dropdown-menu">
+                    <li class="pb-2"><button class="dropdown-item btn d-flex align-items-center gap-3"
+                            type="button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                            </svg><span>Login or Register</span></button></li>
+
+                    <li class="pb-2"><button class="dropdown-item btn d-flex align-items-center gap-3"
+                            type="button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                            </svg><span>My Cart</span></button></li>
+
+                    <li><button class="dropdown-item btn d-flex align-items-center gap-3" type="button"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-credit-card" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                                <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                            </svg><span>Balance of Giftcards</span></button></li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="pb-2"><button class="dropdown-item btn d-flex align-items-center gap-3"
+                            type="button"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                            </svg><span>Sign out</span></button></li>
+
+                </ul>
             </div>
+
+
+
+            <!-- simbolo CART: con offcanvas -->
             <div class="d-flex align-items-center gap-2 d-none d-md-flex">
-                <button class="btn d-flex flex-column align-items-center gap-2">
+                <button class="btn btn-outline-dark d-flex align-items-center gap-2" type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                         class="bi bi-cart-fill" viewBox="0 0 16 16">
                         <path
                             d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                    </svg>
-                    <p class="m-0 d-none d-md-flex">Carrello</p>
+                    </svg><span id="number-of-articles">0</span>
                 </button>
+
+                <!-- offcanvas menù rights -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h3 class="offcanvas-title" id="offcanvasRightLabel">Your Cart</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="d-flex gap-3">
+                                    <img src="https://images-na.ssl-images-amazon.com/images/I/91xrEMcvmQL.jpg"
+                                        class="col-4 h-50" alt="...">
+                                    <div>
+                                        <h6 class="card-title" style="height: 75px;">Pandemic (The Extinction Files,
+                                            Book 1)</h6>
+                                        <p class="m-0">Quantity: 1</p>
+                                        <p class="price">7,81</p>
+                                        <button type="button" id="delete-from-cart" class="btn btn-outline-dark">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item">
+                                <div class="d-flex gap-3">
+                                    <img src="https://images-na.ssl-images-amazon.com/images/I/91xrEMcvmQL.jpg"
+                                        class="col-4 h-50" alt="...">
+                                    <div>
+                                        <h6 class="card-title" style="height: 75px;">Pandemic (The Extinction Files,
+                                            Book 1)</h6>
+                                        <p class="m-0">Quantity: 1</p>
+                                        <p class="price">7,81</p>
+                                        <button type="button" id="delete-from-cart" class="btn btn-outline-dark">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <p class="m-0">Order value</p>
+                                <p class="m-0">10,50 €</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="m-0">Delivery</p>
+                                <p class="m-0">3,50 €</p>
+                            </div>
+                            <div class="d-flex justify-content-between my-4">
+                                <p>TOTAL</p>
+                                <p>3,50 €</p>
+                            </div>
+
+                            <div class="d-flex flex-column gap-2">
+                                <button type="button" class="btn btn-dark">CHECKOUT</button>
+                                <button type="button" class="btn btn-outline-dark">SHOPPING BAG</button>
+                            </div>
+
+
+                        </ul>
+                    </div>
+                </div>
+
             </div>
+        </div>
+    </nav>
+
+
+    <header class="bg-dark text-white py-5">
+        <div class="container text-center">
+            <h1>Welcome to our Bookshop!</h1>
+            <p>Discover our range of books and find the parfect one for you</p>
+        </div>
+        <!-- BARRA DI RICERCA -->
+
+        <!-- visibile solo a partire la schermi di medie dimensioni -->
+        <div class="col-6 d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center m-auto">
+            <input type="text" placeholder="Find your book" class="form-control h-50 w-100 w-sm-75">
+            <input type="button" value="Search" class="btn btn-outline-light h-50">
         </div>
     </header>
 
 
-
-    <main class="container mt-3">
-        <div class="d-flex">
-            <div class="card col" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+    <main class="container mt-3 mb-5">
+        <div id="book-container" class="col-12 d-flex flex-wrap justify-content-around gap-3">
+            <!-- card con libri compilate con JS -->
         </div>
-
-
-
-
-
-
-
-
     </main>
 
 
@@ -131,20 +259,25 @@
 
 
     <!-- FOOTER: visibile solo da mobile -->
-    <footer class="position-fixed bottom-0 col-12 border-top d-md-none">
+    <footer class="col-12 position-fixed bottom-0 col-11 border-top d-md-none bg-white">
 
-        <!-- home -->
+        <!-- HOME -->
         <div class="d-flex col-12 justify-content-between p-2">
-            <button type="button" class="btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                    class="bi bi-house-door-fill" viewBox="0 0 16 16">
-                    <path
-                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
-                </svg>
-            </button>
+            <a href="#">
+                <button type="button" class="btn btn-light">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                    </svg>
+                </button>
+            </a>
 
-            <!-- user -->
-            <button type="button" class="btn">
+
+
+            <!-- USER: con offcanvas -->
+            <button type="button" class="btn dropdown-toggle dropup" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
@@ -153,14 +286,133 @@
                 </svg>
             </button>
 
-            <!-- cart -->
-            <button type="button" class="btn">
+            <!-- Offcanvas menù bottom -->
+            <div class="offcanvas offcanvas-bottom" tubindex="-1" id="offcanvasBottom"
+                aria-labelledby="offcanvasBottomLabel">
+                <div class="offcanvas-header pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body small pt-0">
+                    <button class="btn d-flex align-items-center gap-3" type="button"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                        </svg><span>Login or Register</span></button>
+
+                    <button class="btn d-flex align-items-center gap-3" type="button"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-cart" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg><span>My Cart</span></button>
+
+                    <button class="btn d-flex align-items-center gap-3" type="button"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-credit-card" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                            <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                        </svg><span>Balance of Giftcards</span></button>
+
+                    <button class="btn d-flex align-items-center gap-3" type="button"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                            <path fill-rule="evenodd"
+                                d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                        </svg><span>Sign out</span></button>
+                </div>
+            </div>
+
+
+
+
+            <!-- CART: con offcanvas-->
+            <button type="button" class="btn btn-outline-dark" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight2" aria-controls="offcanvasRight2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-cart-fill" viewBox="0 0 16 16">
                     <path
                         d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                </svg>
+                </svg><span id="number-of-articles" class="ps-2">0</span>
             </button>
+
+            <!-- offcanvas menù rights -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight2"
+                aria-labelledby="offcanvasRightLabel2">
+                <div class="offcanvas-header">
+                    <h3 class="offcanvas-title" id="offcanvasRightLabel">Your Cart</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="d-flex gap-3">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/91xrEMcvmQL.jpg"
+                                    class="col-4 h-50" alt="...">
+                                <div>
+                                    <h6 class="card-title" style="height: 75px;">Pandemic (The Extinction Files,
+                                        Book 1)</h6>
+                                    <p class="m-0">Quantity: 1</p>
+                                    <p class="price">7,81</p>
+                                    <button type="button" id="delete-from-cart" class="btn btn-outline-dark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="d-flex gap-3">
+                                <img src="https://images-na.ssl-images-amazon.com/images/I/91xrEMcvmQL.jpg"
+                                    class="col-4 h-50" alt="...">
+                                <div>
+                                    <h6 class="card-title" style="height: 75px;">Pandemic (The Extinction Files,
+                                        Book 1)</h6>
+                                    <p class="m-0">Quantity: 1</p>
+                                    <p class="price">7,81</p>
+                                    <button type="button" id="delete-from-cart" class="btn btn-outline-dark">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <p class="m-0">Order value</p>
+                            <p class="m-0">10,50 €</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p class="m-0">Delivery</p>
+                            <p class="m-0">3,50 €</p>
+                        </div>
+                        <div class="d-flex justify-content-between my-4">
+                            <p>TOTAL</p>
+                            <p>3,50 €</p>
+                        </div>
+
+                        <div class="d-flex flex-column gap-2">
+                            <button type="button" class="btn btn-dark">CHECKOUT</button>
+                            <button type="button" class="btn btn-outline-dark">SHOPPING BAG</button>
+                        </div>
+
+
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -171,5 +423,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"></script>
+<script src="script.js"></script>
 
 </html>
