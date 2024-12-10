@@ -33,8 +33,8 @@
             <!-- BARRA DI RICERCA -->
             <div
                 class="d-none d-lg-flex col-lg-4 col-xxl-6 d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center m-auto">
-                <input type="text" placeholder="Find your book" class="form-control h-75 w-100 w-sm-75">
-                <input type="button" value="Search" class="btn btn-outline-dark h-70">
+                <input type="text" placeholder="Find your book" class="form-control h-75 w-100 w-sm-75 search-input" id="search-input">
+                <input type="button" value="Search" class="btn btn-outline-dark h-70" id="search-button">
             </div>
 
             <!--  ACCOUNT e CARRELLO -->
@@ -128,11 +128,6 @@
             <h1>Welcome to our Bookshop!</h1>
             <p class="m-0">Discover our range of books and find the perfect one for you</p>
         </div>
-        <!-- BARRA DI RICERCA -->
-        <!-- div class="col-6 d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center m-auto">
-            <input type="text" placeholder="Find your book" class="form-control h-50 w-100 w-sm-75">
-            <input type="button" value="Search" class="btn btn-outline-light h-50">
-        </div> -->
     </header>
 
 
@@ -201,6 +196,7 @@
 
         </div>
     </footer>
+
 
     <!-- FOOTER: visibile a partire da schermi medi -->
     <footer class="d-none d-md-flex bg-dark text-white py-3">
@@ -291,8 +287,8 @@
         </div>
         <div class="offcanvas-body small h-50">
             <div class="col-6 d-flex flex-column gap-2 m-auto">
-                <input type="text" placeholder="Find your book" class="form-control ">
-                <input type="button" value="Search" class="btn btn-dark">
+                <input type="text" placeholder="Find your book" class="form-control" id="search-input-2">
+                <input type="button" value="Search" data-bs-dismiss="offcanvas" class="btn btn-dark" id="search-button-2">
             </div>
         </div>
     </div>
