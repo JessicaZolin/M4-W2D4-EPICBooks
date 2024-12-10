@@ -143,6 +143,15 @@ const updateCart = () => {
     
 }
 
+// Funzione per svuotare il carrello
+const clearCart = () => {
+   cart = [];
+   updateCartDisplay();
+   updateCart();
+}
+
+document.getElementById("clear-cart").addEventListener("click", clearCart);
+
 // Rimuove un libro dal carrello
 const removeFromCart = (asin) => {
     cart = cart.filter(item => item.asin !== asin);  // Rimuove l'elemento dall'array
