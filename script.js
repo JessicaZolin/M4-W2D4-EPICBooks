@@ -16,7 +16,7 @@ const stampaLibri = (res) => {
     // seleziona il container per le card e crea per ogni elemento dell'array una card con l'immagine, il titolo e il prezzo
     const bookContainer = document.getElementById("book-container")
     bookContainer.innerHTML += res.map(element => {
-        return `<div class="card col-sm-6 col-lg-3 mb-4" id ="book_${element.asin}">
+        return `<div class="card col-10 col-sm-6 col-md-4 col-lg-3 mb-4" id ="book_${element.asin}">
                     <div class="h-100">
                         <img src="${element.img}" class="card-img-top" alt="${element.title}" height="450px">
                         <div class="card-body">
@@ -71,9 +71,14 @@ const addToCart = (img, title, price, asin) => {
 
 // funzione per aggiornare il carrello
 function updateCartDisplay() {
-    let cartButton = document.getElementById("number-of-articles");
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
-    cartButton.textContent = totalItems
+    let cartButton = document.querySelectorAll(".number-of-articles");
+    
+
+    cartButton.forEach(item => {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+        item.textContent = totalItems
+    })
+    
     // aggiorna offcanvas con card libro aggiunta al carrello
     updateCart()
 }

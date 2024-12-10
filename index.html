@@ -113,7 +113,7 @@
                             class="bi bi-cart-fill" viewBox="0 0 16 16">
                             <path
                                 d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                        </svg><span id="number-of-articles">0</span>
+                        </svg><span id="number-of-articles" class="number-of-articles">0</span>
                     </button>
                 </div>
             </div>
@@ -139,7 +139,7 @@
 
     <!-- MAIN -->
     <main class="container my-5">
-        <div id="book-container" class="row">
+        <div id="book-container" class="row justify-content-center">
 
             <!-- card con libri compilate con JS -->
 
@@ -168,7 +168,7 @@
 
             <!-- simbolo SEARCH: con offcanvas -->
             <button type="button" class="btn dropdown-toggle dropup" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom2">
+                data-bs-target="#offcanvasTop" aria-controls="offcanvasBottom2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
                     viewBox="0 0 16 16">
                     <path
@@ -191,12 +191,12 @@
 
             <!-- CART: con offcanvas-->
             <button type="button" class="btn btn-outline-dark cart-symbol" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasRight2" aria-controls="offcanvasRight2">
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-cart-fill" viewBox="0 0 16 16">
                     <path
                         d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                </svg><span id="number-of-articles" class="ps-2">0</span>
+                </svg><span id="number-of-articles" class="ps-2 number-of-articles">0</span>
             </button>
 
         </div>
@@ -261,13 +261,19 @@
                 <div class="d-flex justify-content-between">
                     <p class="m-0">Delivery</p>
                     <p class="m-0" id="shippingCost">
+
                         <!-- spese spedizione aggiunte tramite JS-->
+
                     </p>
                 </div>
 
                 <div class="d-flex justify-content-between my-4">
                     <p>TOTAL</p>
-                    <p><span id="cartTotal"></span></p>
+                    <p id="cartTotal">
+
+                        <!-- spese totali aggiunte tramite JS-->
+
+                    </p>
                 </div>
 
                 <div class="d-flex flex-column gap-2">
@@ -285,19 +291,6 @@
         </div>
         <div class="offcanvas-body small h-50">
             <div class="col-6 d-flex flex-column gap-2 m-auto">
-                <input type="text" placeholder="Find your book" class="form-control ">
-                <input type="button" value="Search" class="btn btn-dark">
-            </div>
-        </div>
-    </div>
-
-    <!-- SEARCH (footer): Offcanvas menù bottom -->
-    <div class="offcanvas offcanvas-bottom" tubindex="-1" id="offcanvasBottom2" aria-labelledby="offcanvasBottomLabel2">
-        <div class="offcanvas-header">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body small h-50">
-            <div class="d-flex flex-column gap-2 m-auto">
                 <input type="text" placeholder="Find your book" class="form-control ">
                 <input type="button" value="Search" class="btn btn-dark">
             </div>
@@ -339,40 +332,6 @@
         </div>
     </div>
 
-    <!-- CART (footer): offcanvas menù rights -->
-    <div class="offcanvas offcanvas-end cart" tabindex="-1" id="offcanvasRight2" aria-labelledby="offcanvasRightLabel2">
-        <div class="offcanvas-header">
-            <h3 class="offcanvas-title" id="offcanvasRightLabel">Your Cart</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="list-group" id="cartItems2">
-                
-                 <!-- Item carrello compilati con JS -->
-
-            </ul>
-
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <p class="m-0">Order value</p>
-                    <p class="m-0">10,50 €</p>
-                </div>
-                <div class="d-flex justify-content-between">
-                    <p class="m-0">Delivery</p>
-                    <p class="m-0">3,50 €</p>
-                </div>
-                <div class="d-flex justify-content-between my-4">
-                    <p>TOTAL</p>
-                    <p>3,50 €</p>
-                </div>
-
-                <div class="d-flex flex-column gap-2">
-                    <button type="button" class="btn btn-dark">CHECKOUT</button>
-                    <button type="button" class="btn btn-outline-dark">SHOPPING BAG</button>
-                </div>
-
-        </div>
-    </div>
 
 
 </body>
