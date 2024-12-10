@@ -138,7 +138,7 @@
 
 
     <!-- MAIN -->
-    <main class="container mt-5 mb-5">
+    <main class="container my-5">
         <div id="book-container" class="row">
 
             <!-- card con libri compilate con JS -->
@@ -254,17 +254,22 @@
                 <hr>
                 <div class="d-flex justify-content-between">
                     <p class="m-0">Order value</p>
-                    <p><span id="cartTotal">0,00</span> €</p>
+                    <p class="m-0" id="oderValue">
+                    </p>
                 </div>
-                <!-- <div class="d-flex justify-content-between">
+
+                <div class="d-flex justify-content-between">
                     <p class="m-0">Delivery</p>
-                    <p id="shippingCost" class="m-0">4,99 €</p>
+                    <p class="m-0" id="shippingCost">
+                        <!-- spese spedizione aggiunte tramite JS-->
+                    </p>
                 </div>
+
                 <div class="d-flex justify-content-between my-4">
                     <p>TOTAL</p>
-                    <p>0,00 €</p>
+                    <p><span id="cartTotal"></span></p>
                 </div>
- -->
+
                 <div class="d-flex flex-column gap-2">
                     <button type="button" class="btn btn-dark">CHECKOUT</button>
                     <button type="button" class="btn btn-outline-dark">SHOPPING BAG</button>
