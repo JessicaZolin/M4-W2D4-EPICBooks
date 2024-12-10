@@ -1,7 +1,7 @@
 Compito pratico M4 Week-2 Day-4:
 
 Creazione di un marketplace di libri online:
-  ° homepage che mostri tutti i libri con delle card di bootstrap
+  ° homepage che mostri tutti i libri con delle card di bootstrap<br>
   ° card contenenti un pulsante per aggiungere al carrello e uno per "saltare" il prodotto
   ° sezione per il carrello
   ° input di testo per cercare i libri
